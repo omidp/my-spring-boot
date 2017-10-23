@@ -1,4 +1,4 @@
-package com;
+package com.jedlab.web;
 
 import java.util.Map;
 
@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.jedlab.dao.UserDao;
+import com.jedlab.domain.User;
 
 @Controller
 public class UserController

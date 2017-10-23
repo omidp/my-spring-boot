@@ -1,14 +1,24 @@
-package com;
+package com.jedlab;
 
 import java.util.Arrays;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 
-@SpringBootApplication()
+import com.jedlab.exceptions.JedlabFailureException;
+
+//@SpringBootApplication
+@Configuration
+@ComponentScan
+@EnableAutoConfiguration
 public class DemoApplication
 {
 
@@ -33,4 +43,11 @@ public class DemoApplication
 
         };
     }
+    
+    @Bean
+    public String testBean()
+    {
+//        throw new JedlabFailureException();
+    }
+    
 }

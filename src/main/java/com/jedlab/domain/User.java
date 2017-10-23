@@ -1,4 +1,4 @@
-package com;
+package com.jedlab.domain;
 
 import java.io.Serializable;
 

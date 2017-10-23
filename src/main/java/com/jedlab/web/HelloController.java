@@ -1,4 +1,4 @@
-package com;
+package com.jedlab.web;
 
 import java.util.Map;
 
