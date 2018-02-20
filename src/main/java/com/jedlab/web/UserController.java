@@ -15,13 +15,13 @@ import com.jedlab.domain.User;
 public class UserController
 {
 
-    @Autowired
-    UserDao dao;
+//    @Autowired
+//    UserDao dao;
     
     @RequestMapping(value="/userList", method=RequestMethod.GET)
     public String index(Model model)
     {
-        model.addAttribute("userList", dao.findAll());        
+//        model.addAttribute("userList", dao.findAll());        
         return "userList";
     }
     
@@ -29,10 +29,10 @@ public class UserController
     @RequestMapping(value="/createUser", method=RequestMethod.GET)
     public String createUser(Model model)
     {
-        User u = new User();
-        u.setUsername("omid");
-        u.setPasswd("123");
-        dao.save(u);
+//        User u = new User();
+//        u.setUsername("omid");
+//        u.setPasswd("123");
+//        dao.save(u);
         return "userList";
     }
 

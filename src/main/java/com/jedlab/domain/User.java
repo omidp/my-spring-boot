@@ -2,25 +2,19 @@ package com.jedlab.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="members")
+//@Entity
+//@Table(name="members")
 public class User implements Serializable
 {
 
-    @Id
-    @GeneratedValue
+//    @Id
+//    @GeneratedValue
     private Long id;
 
-    @Column(name="user_name")
+//    @Column(name="user_name")
     private String username;
 
-    @Column(name="user_pass")
+//    @Column(name="user_pass")
     private String passwd;
 
     public Long getId()
