@@ -28,7 +28,7 @@ public class StateManager
     }
     
     
-    @StatesOnTransition(source=States.DeclareService, target=States.DeployService)
+    @StatesOnTransition(source=States.GLobalEligibility, target=States.DeclareService)
     @Transactional
     public void declareTransition(@EventHeaders Map<String, Object> headers, 
             ExtendedState extendedState,
@@ -36,6 +36,17 @@ public class StateManager
             Message<String> message, Exception e)
     {
         logger.info("declareTransition"
+                + "");
+    }
+    
+    @StatesOnTransition(source=States.DeclareService, target=States.DeployService)
+    @Transactional
+    public void deployTransition(@EventHeaders Map<String, Object> headers, 
+            ExtendedState extendedState,
+            StateMachine<String, String> stateMachine, 
+            Message<String> message, Exception e)
+    {
+        logger.info("deployTransition"
                 + "");
     }
     
