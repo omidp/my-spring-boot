@@ -17,7 +17,8 @@ public class StateManager
 
     private static final Logger logger = Logger.getLogger(StateManager.class.getName());
     
-    @StatesOnTransition(source=States.START, target=States.GLobalEligibility)
+//    @StatesOnTransition(source=States.START, target=States.GLobalEligibility)
+    @StatesOnStates(source=States.START, target=States.GLobalEligibility)
     @Transactional
     public void eligibilityTransition(@EventHeaders Map<String, Object> headers, 
             ExtendedState extendedState,
@@ -28,7 +29,7 @@ public class StateManager
     }
     
     
-    @StatesOnTransition(source=States.GLobalEligibility, target=States.DeclareService)
+    @StatesOnStates(source=States.GLobalEligibility, target=States.DeclareService)
     @Transactional
     public void declareTransition(@EventHeaders Map<String, Object> headers, 
             ExtendedState extendedState,
@@ -39,7 +40,7 @@ public class StateManager
                 + "");
     }
     
-    @StatesOnTransition(source=States.DeclareService, target=States.DeployService)
+    @StatesOnStates(source=States.DeclareService, target=States.DeployService)
     @Transactional
     public void deployTransition(@EventHeaders Map<String, Object> headers, 
             ExtendedState extendedState,
